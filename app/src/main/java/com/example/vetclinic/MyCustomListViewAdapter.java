@@ -30,7 +30,7 @@ public class MyCustomListViewAdapter extends ArrayAdapter<String> {
         text_appointments.setText(appointments.get(position));
 
         ImageView image_appointment = view.findViewById(R.id.image_appointment);
-        image_appointment.setImageResource(R.drawable.symbol);
+        image_appointment.setImageResource(R.drawable.paper);
 
         return view;
     }
