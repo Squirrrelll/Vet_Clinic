@@ -8,7 +8,7 @@ import com.example.vetclinic.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "TAG";
+    private static final String TAG = "Context";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
