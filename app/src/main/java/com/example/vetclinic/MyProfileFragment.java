@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 
 import com.example.vetclinic.databinding.ActivityMainBinding;
@@ -40,7 +41,7 @@ public class MyProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        FragmentManager fragmentManager = getParentFragmentManager();
+       /* FragmentManager fragmentManager = getParentFragmentManager();
         binding.btnAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +59,24 @@ public class MyProfileFragment extends Fragment {
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container_view, new AppointmentFragment());
                 fragmentTransaction.commit();}
+        });*/
+
+        binding.btnAppointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("navigation", "Navigation text 1");
+                Navigation.findNavController(view).navigate(R.id.action_myProfileFragment_to_myAppointmentsFragment, bundle);
+            }
+        });
+
+        binding.btnMyAppointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("navigation", binding.editTextTextPersonName4.getText().toString());
+                Navigation.findNavController(view).navigate(R.id.action_myProfileFragment_to_appointmentFragment, bundle);
+            }
         });
 
     }

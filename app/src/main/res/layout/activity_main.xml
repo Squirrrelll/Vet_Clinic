@@ -19,11 +19,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_my_profile" />
-
-
+        tools:layout="@layout/fragment_my_profile"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_fragment"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
