@@ -24,6 +24,7 @@ public class AppointmentFragment extends Fragment {
     public AppointmentFragment(){
         super(R.layout.fragment_appointment);
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,9 @@ public class AppointmentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentAppointmentBinding.inflate(inflater, container,false);
         return binding.getRoot();
+        //container.removeAllViews(); // Inflate the layout for this fragment
+        //return inflater.inflate(R.layout.fragment_appointment, container, false);
+
     }
 
     @Override
@@ -50,6 +54,9 @@ public class AppointmentFragment extends Fragment {
 
         MyCustomRecyclerViewAdapter recyclerViewAdapter = new MyCustomRecyclerViewAdapter(getActivity(), appointments_array);
         binding.recyclerView.setAdapter(recyclerViewAdapter);
+
+        String arguments = getArguments().getString("navigation");
+        binding.navigationText.setText(arguments);
     }
 }
 

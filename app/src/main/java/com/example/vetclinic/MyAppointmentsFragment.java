@@ -42,6 +42,9 @@ public class MyAppointmentsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        String arguments = getArguments().getString("navigation");
+        binding.navigationText.setText(arguments);
+
         List<String> appointments_array = new ArrayList<String>();
         for (int i = 0; i < 300; i++){
             appointments_array.add("Моя запись " + (i+1));
@@ -56,6 +59,7 @@ public class MyAppointmentsFragment extends Fragment {
                 Log.i("ListView", appointments_array.get(i));
             }
         });
+
     }
 }
 

@@ -64,8 +64,9 @@ public class MyProfileFragment extends Fragment {
         binding.btnAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.startFragment.setVisibility(View.INVISIBLE);
                 Bundle bundle = new Bundle();
-                bundle.putString("navigation", "Navigation text 1");
+                bundle.putString("navigation", "Navigation text");
                 Navigation.findNavController(view).navigate(R.id.action_myProfileFragment_to_myAppointmentsFragment, bundle);
             }
         });
@@ -73,8 +74,9 @@ public class MyProfileFragment extends Fragment {
         binding.btnMyAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.startFragment.setVisibility(View.INVISIBLE);
                 Bundle bundle = new Bundle();
-                bundle.putString("navigation", binding.editTextTextPersonName4.getText().toString());
+                bundle.putString("navigation", "Navigation text");
                 Navigation.findNavController(view).navigate(R.id.action_myProfileFragment_to_appointmentFragment, bundle);
             }
         });
