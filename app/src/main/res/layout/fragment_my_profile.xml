@@ -48,12 +48,12 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btn_log_in"
+            android:id="@+id/btn_notification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:background="@color/bright_orange"
-            android:text="@string/btn_log_in"
+            android:text="Уведомление"
             android:textSize="24sp" />
 
         <TextView

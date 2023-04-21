@@ -1,9 +1,18 @@
 package com.example.vetclinic;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -80,6 +89,43 @@ public class MyProfileFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_myProfileFragment_to_appointmentFragment, bundle);
             }
         });
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Мой канал";
+            String description = "Это канал для уведомлений";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("CHANNEL", name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = requireContext().
+                    getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        Intent notificationIntent = new Intent(getActivity(), MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(),
+                0, notificationIntent,
+                PendingIntent.FLAG_CANCEL_CURRENT);
+
+        binding.btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(requireContext(),
+                        "CHANNEL")
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentText("Не забудьте о завтрашнем приеме")
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(requireContext());
+
+                if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+
+                notificationManager.notify(1, builder.build());
+            }
+        });
+
 
     }
 }
