@@ -36,7 +36,6 @@ public class MyProfileFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Nullable
@@ -70,7 +69,7 @@ public class MyProfileFragment extends Fragment {
                 fragmentTransaction.commit();}
         });*/
 
-        binding.btnAppointment.setOnClickListener(new View.OnClickListener() {
+        binding.btnMyAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 binding.startFragment.setVisibility(View.INVISIBLE);
@@ -80,7 +79,7 @@ public class MyProfileFragment extends Fragment {
             }
         });
 
-        binding.btnMyAppointment.setOnClickListener(new View.OnClickListener() {
+        binding.btnAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 binding.startFragment.setVisibility(View.INVISIBLE);
@@ -126,7 +125,13 @@ public class MyProfileFragment extends Fragment {
             }
         });
 
-
+        binding.btnBanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), MyService.class);
+                getActivity().startService(intent);
+            }
+        });
     }
 }
 

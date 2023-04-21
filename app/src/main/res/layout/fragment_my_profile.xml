@@ -65,12 +65,11 @@
             android:textSize="34sp" />
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/btn_banner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:onClick="GoLog"
-            android:text="@string/btn_register"
+            android:text="Сервис"
             android:textSize="24sp" />
 
 
