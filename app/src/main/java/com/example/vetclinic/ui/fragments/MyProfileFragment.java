@@ -1,4 +1,4 @@
-package com.example.vetclinic;
+package com.example.vetclinic.ui.fragments;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -19,16 +19,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 
-import com.example.vetclinic.databinding.ActivityMainBinding;
+import com.example.vetclinic.MyService;
+import com.example.vetclinic.R;
 import com.example.vetclinic.databinding.FragmentMyProfileBinding;
+import com.example.vetclinic.ui.activities.MainActivity;
 
 public class MyProfileFragment extends Fragment {
     FragmentMyProfileBinding binding;
+
     public MyProfileFragment(){
         super(R.layout.fragment_my_profile);
     }
@@ -36,6 +37,7 @@ public class MyProfileFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable
@@ -43,6 +45,8 @@ public class MyProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentMyProfileBinding.inflate(inflater, container,false);
         return binding.getRoot();
+
+
     }
 
     @Override

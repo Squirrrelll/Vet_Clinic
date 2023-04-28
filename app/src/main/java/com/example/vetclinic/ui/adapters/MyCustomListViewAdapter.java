@@ -1,4 +1,4 @@
-package com.example.vetclinic;
+package com.example.vetclinic.ui.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.vetclinic.R;
 
 import java.util.List;
 

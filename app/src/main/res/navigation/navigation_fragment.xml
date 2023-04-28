@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_fragment"
+    app:startDestination="@id/myProfileFragment">
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.example.vetclinic.ui.fragments.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_myAppointmentsFragment"
+            app:destination="@id/myAppointmentsFragment" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_appointmentFragment"
+            app:destination="@id/appointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAppointmentsFragment"
+        android:name="com.example.vetclinic.ui.fragments.MyAppointmentsFragment"
+        android:label="fragment_my_appointments"
+        tools:layout="@layout/fragment_my_appointments" />
+    <fragment
+        android:id="@+id/appointmentFragment"
+        android:name="com.example.vetclinic.ui.fragments.AppointmentFragment"
+        android:label="fragment_appointment"
+        tools:layout="@layout/fragment_appointment" />
+</navigation>

@@ -1,4 +1,4 @@
-package com.example.vetclinic;
+package com.example.vetclinic.ui.fragments;
 
 import android.os.Bundle;
 
@@ -13,8 +13,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import com.example.vetclinic.ui.adapters.MyCustomListViewAdapter;
+import com.example.vetclinic.R;
 import com.example.vetclinic.databinding.FragmentMyAppointmentsBinding;
-import com.example.vetclinic.databinding.FragmentMyProfileBinding;
 
 import java.util.ArrayList;
 import java.util.List;

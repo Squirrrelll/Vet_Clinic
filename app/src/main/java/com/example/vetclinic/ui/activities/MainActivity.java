@@ -1,9 +1,11 @@
-package com.example.vetclinic;
+package com.example.vetclinic.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.vetclinic.ui.fragments.MyProfileFragment;
+import com.example.vetclinic.R;
 import com.example.vetclinic.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

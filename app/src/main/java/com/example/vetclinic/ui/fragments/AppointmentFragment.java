@@ -1,4 +1,4 @@
-package com.example.vetclinic;
+package com.example.vetclinic.ui.fragments;
 
 import android.os.Bundle;
 
@@ -11,8 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vetclinic.ui.adapters.MyCustomRecyclerViewAdapter;
+import com.example.vetclinic.R;
 import com.example.vetclinic.databinding.FragmentAppointmentBinding;
-import com.example.vetclinic.databinding.FragmentMyAppointmentsBinding;
 
 import java.util.ArrayList;
 import java.util.List;
