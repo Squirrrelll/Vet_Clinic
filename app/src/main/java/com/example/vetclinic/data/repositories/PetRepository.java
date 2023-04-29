@@ -8,7 +8,7 @@ public class PetRepository {
     public PetRepository(int index){
         createPet(index);
     }
-    public String getPet(){
+    public String getData(){
         return pet.getPetName();
     }
     public void createPet(int index){
