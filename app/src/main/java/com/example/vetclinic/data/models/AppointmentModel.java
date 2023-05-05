@@ -1,13 +1,13 @@
 package com.example.vetclinic.data.models;
 
 public class AppointmentModel {
-    private final String appointmentName;
+    private final String appointment;
 
-    public AppointmentModel(String appointmentName){
-        this.appointmentName = appointmentName;
+    public AppointmentModel(String appointment){
+                this.appointment = appointment;
     }
 
-    public String getAppointmentName(){
-        return appointmentName;
+    public String getAppointment(){
+        return appointment;
     }
 }

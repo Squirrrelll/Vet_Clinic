@@ -1,14 +1,16 @@
 package com.example.vetclinic.data.models;
 
 public class PetModel {
-    private final String PetName;
+    private final String pet;
+    private final String AppointmentViewModel;
 
-    public PetModel(String PetName){
-        this.PetName = PetName;
+    public PetModel(String pet, String AppoitmentViewModel){
+        this.pet = pet;
+        this.AppointmentViewModel=AppoitmentViewModel;
     }
 
-    public String getPetName(){
-        return PetName;
+    public String getPet(){
+        return pet;
     }
 
 }

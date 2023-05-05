@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.lifecycle.ViewModel;
 import androidx.navigation.Navigation;
 
 
@@ -26,6 +27,7 @@ import com.example.vetclinic.MyService;
 import com.example.vetclinic.R;
 import com.example.vetclinic.databinding.FragmentMyProfileBinding;
 import com.example.vetclinic.ui.activities.MainActivity;
+import com.example.vetclinic.ui.viewmodels.AppointmentViewModel;
 
 public class MyProfileFragment extends Fragment {
     FragmentMyProfileBinding binding;
@@ -52,6 +54,9 @@ public class MyProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
 
        /* FragmentManager fragmentManager = getParentFragmentManager();
         binding.btnAppointment.setOnClickListener(new View.OnClickListener() {

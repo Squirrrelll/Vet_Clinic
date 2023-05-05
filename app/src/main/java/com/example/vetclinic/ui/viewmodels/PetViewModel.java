@@ -5,25 +5,20 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.vetclinic.data.models.AppointmentModel;
+import com.example.vetclinic.data.models.PetModel;
 import com.example.vetclinic.data.repositories.PetRepository;
 import com.example.vetclinic.data.sources.AppointmentDataSource;
 
+import java.util.List;
 import java.util.Random;
 
 public class PetViewModel extends ViewModel {
-    private final MutableLiveData<PetRepository> repository;
+    private LiveData<List<PetModel>> pets;
     public PetViewModel(){
-        repository = new MutableLiveData<>(new PetRepository(0));
+        PetRepository petRepository= new PetRepository();
+        pets = petRepository.getPet();
     }
-    public LiveData<PetRepository> getPet(){
-        return repository;
-    }
-    public void rollPet(){
-        Random random = new Random();
-        int randInt = random.nextInt(2);
-        repository.setValue(new PetRepository(randInt));
-    }
-    public String getName(){
-        return repository.getValue().getPet();
+
+    public LiveData<Object> getPet() {
     }
 }

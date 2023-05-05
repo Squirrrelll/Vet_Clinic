@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.vetclinic.ui.adapters.MyCustomRecyclerViewAdapter;
 import com.example.vetclinic.R;
 import com.example.vetclinic.databinding.FragmentAppointmentBinding;
+import com.example.vetclinic.ui.viewmodels.AppointmentViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class AppointmentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable
@@ -44,6 +46,16 @@ public class AppointmentFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+        // app-specific storage
+        AppointmentViewModl.addAppSpecific(user_name);
+
+        // external storage
+        AppointmentViewModel.addNameExternalStorage(user_name);
+
+        // sharedPreferences
+        AppointmentViewModel.addNameSharedPreferences(user_name);
 
         List<String> appointments_array = new ArrayList<String>();
         for (int i = 0; i < 300; i++){

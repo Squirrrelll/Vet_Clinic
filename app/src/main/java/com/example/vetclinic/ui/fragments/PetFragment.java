@@ -21,6 +21,7 @@ public class PetFragment extends Fragment {
 
     FragmentPetBinding binding;
     PetViewModel model;
+    private PetViewModel petViewModel;
 
     public PetFragment(){
         super(R.layout.fragment_pet);
@@ -29,6 +30,7 @@ public class PetFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        petViewModel = new ViewModelProvider(this).get(PetViewModel.class);
     }
 
     @Nullable

@@ -1,19 +1,21 @@
 package com.example.vetclinic.data.repositories;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.vetclinic.data.models.PetModel;
 import com.example.vetclinic.data.sources.PetDataSource;
 
+import java.util.List;
+
 public class PetRepository {
-    private PetModel pet;
-    public PetRepository(int index){
-        createPet(index);
+    private LiveData<List<PetModel>> pets;
+    public PetRepository(){
+        pets = PetDataSource.createPetList();
     }
-    public String getData(){
-        return pet.getPetName();
+    public LiveData<List<PetModel>> getPets(){
+        return pets;
     }
-    public void createPet(int index){
-        pet = new PetModel(PetDataSource.getPetName(index));
-    }
+
 }
 
 
