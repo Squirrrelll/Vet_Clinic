@@ -52,10 +52,10 @@ public class AppointmentFragment extends Fragment {
         AppointmentViewModl.addAppSpecific(user_name);
 
         // external storage
-        AppointmentViewModel.addNameExternalStorage(user_name);
+        AppointmentViewMdel.addExternalStorage(user_name);
 
         // sharedPreferences
-        AppointmentViewModel.addNameSharedPreferences(user_name);
+        AppointmentViewodel.addSharedPreferences(user_name);
 
         List<String> appointments_array = new ArrayList<String>();
         for (int i = 0; i < 300; i++){
