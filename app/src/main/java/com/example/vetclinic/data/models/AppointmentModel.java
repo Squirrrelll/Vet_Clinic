@@ -10,4 +10,10 @@ public class AppointmentModel {
     public String getAppointment(){
         return appointment;
     }
+
+    public String getName() {
+        String a="rh";
+        return a;
+
+    }
 }

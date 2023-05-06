@@ -13,7 +13,7 @@
             android:id="@+id/action_myProfileFragment_to_myAppointmentsFragment"
             app:destination="@id/myAppointmentsFragment" />
         <action
-            android:id="@+id/action_myProfileFragment_to_appointmentFragment"
+            android:id="@+id/action_appointmentFragment_to_nameFragment"
             app:destination="@id/appointmentFragment" />
     </fragment>
     <fragment
